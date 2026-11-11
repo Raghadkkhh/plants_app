@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Query private var  plants: [PlantsData]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if plants.isEmpty{
+            Start()
+        }else{
+            
         }
-        .padding()
+            
     }
 }
 
 #Preview {
     ContentView()
 }
+
+
