@@ -9,7 +9,11 @@ import SwiftUI
 import SwiftData
 
 @main
-struct PlantsApp: App {
+struct plantsApp: App {
+    init() {
+        _ = NotificationManager.shared
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
