@@ -29,19 +29,11 @@ final class PlantsViewModel {
         plants.filter { !$0.plantIsWatered } + plants.filter { $0.plantIsWatered }
     }
 
-    func wateredCount(in plants: [PlantsData]) -> Int {
-        plants.filter { $0.plantIsWatered }.count
-    }
-
-    func progress(for plants: [PlantsData]) -> Double {
-        guard !plants.isEmpty else { return 0 }
-        return Double(wateredCount(in: plants)) / Double(plants.count)
-    }
-
-    func headerMessage(for plants: [PlantsData]) -> String {
-        let count = wateredCount(in: plants)
-        if count == 0 { return "Your plants are waiting for a sip 💦" }
-        return "\(count) of your plants feel loved today ✨"
+    func summary(for plants: [PlantsData]) -> PlantsSummary {
+        PlantsSummary(
+            total: plants.count,
+            watered: plants.filter { $0.plantIsWatered }.count
+        )
     }
 
     func toggleWatered(_ plant: PlantsData) {

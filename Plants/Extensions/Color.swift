@@ -16,7 +16,7 @@ extension Color {
         )
     }
 
-    static let appGreen = Color(red: 0.18, green: 0.55, blue: 0.42)
+    static let appGreen = Color(hex: 0x338069)
     static let sheetBackground = Color(red: 0.11, green: 0.11, blue: 0.12)
     static let cardBackground = Color(red: 0.17, green: 0.17, blue: 0.18)
     static let appGray = Color(hex: 0x9F9F91)

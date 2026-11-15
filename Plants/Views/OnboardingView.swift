@@ -54,8 +54,9 @@ struct OnboardingView: View {
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
-                        .background(Color.appGreen, in: Capsule())
+                        .glassEffect(.regular.tint(Color.appGreen).interactive(), in: Capsule())
                 }
+                .buttonStyle(.plain)
                 .padding(.horizontal, 60)
                 .padding(.top, 105)
 

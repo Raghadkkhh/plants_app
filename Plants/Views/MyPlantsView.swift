@@ -71,9 +71,10 @@ struct MyPlantsView: View {
             Spacer()
 
         case .list:
+            let summary = viewModel.summary(for: plants)
             ProgressHeaderView(
-                message: viewModel.headerMessage(for: plants),
-                progress: viewModel.progress(for: plants)
+                message: summary.message,
+                progress: summary.progress
             )
             plantsList
         }
@@ -114,8 +115,9 @@ struct MyPlantsView: View {
                 .font(.title2)
                 .foregroundStyle(.white)
                 .frame(width: 56, height: 56)
-                .background(Color.appGreen, in: Circle())
+                .glassEffect(.regular.tint(Color.appGreen).interactive(), in: Circle())
         }
+        .buttonStyle(.plain)
         .padding(24)
     }
 }

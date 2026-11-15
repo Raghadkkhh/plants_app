@@ -48,8 +48,9 @@ struct SetReminderView: View {
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(width: 44, height: 44)
-                    .background(Color.cardBackground, in: Circle())
+                    .glassEffect(.regular.interactive(), in: Circle())
             }
+            .buttonStyle(.plain)
 
             Spacer()
 
@@ -67,8 +68,9 @@ struct SetReminderView: View {
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(width: 44, height: 44)
-                    .background(Color.appGreen, in: Circle())
+                    .glassEffect(.regular.tint(Color.appGreen).interactive(), in: Circle())
             }
+            .buttonStyle(.plain)
             .disabled(!viewModel.isValid)
             .opacity(viewModel.isValid ? 1 : 0.4)
         }
@@ -80,7 +82,7 @@ struct SetReminderView: View {
                 .foregroundStyle(.white)
 
             TextField("", text: $viewModel.plantName, prompt: Text("Pothos").foregroundStyle(.gray))
-                .tint(.appGreen)
+                .tint(Color.appGreen)
                 .foregroundStyle(.white)
         }
         .padding(.horizontal, 16)
@@ -137,8 +139,9 @@ struct SetReminderView: View {
                 .foregroundStyle(.red)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
-                .background(Color.cardBackground, in: RoundedRectangle(cornerRadius: 24))
+                .glassEffect(.regular.interactive(), in: RoundedRectangle(cornerRadius: 24))
         }
+        .buttonStyle(.plain)
     }
 }
 
